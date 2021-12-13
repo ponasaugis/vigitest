@@ -1,0 +1,256 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+p {
+    margin: 0;
+    letter-spacing: 1.2px;
+}
+
+
+
+header {
+    width: 100%;
+    height: 10vh;
+    min-height: 79px;
+    background-color: rgb(71, 71, 71);
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;   
+}
+
+.logo p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.logo {
+    margin-bottom: 5px;
+}
+
+.searchBar {
+    max-width: 300px;
+    width: 100%;
+}
+
+.searchField {
+    width: 100%;
+    padding: 10px 35px 10px 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+.hero {
+    width: 100%;
+    height: 110vh;    
+    background-image: url("src/img/bg.jpeg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teamMembers {
+    width: 96%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.photo {
+    max-width: 120px;
+    width: 100%;    
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 15px 2px 15px 2px;
+    padding: -5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+img {
+    object-fit: cover;
+    max-height: 100%;
+    max-width: 100%;    
+    transform: scale(1.1);
+    transform-origin: top left;
+    
+}
+
+.about {
+    width: 90%;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 1.5rem;
+    color: #fbc849;
+    text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.about p{
+    line-height: 25px;
+}
+
+.teamMembersBottom {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
+}
+
+.teamMembersBottom .layout {
+    display: grid;
+    margin: 20px 0 20px 0;
+}
+
+.teamMembersBottom .photo {
+    max-width: 180px;
+    margin: 0;
+}
+
+.memberContact {
+    text-align: center;
+}
+
+.name {
+    color: rgba(255,214,4,1);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.email {
+    margin-bottom: 5px;
+}
+
+footer {
+    width: 100%;
+    background-color: rgb(71, 71, 71);
+}
+
+footer::before {
+    display: inline-block;
+    content: "";
+    height: 20px;
+    width: 100%;
+    background-color: #fbc849;
+}
+
+.footerInner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    justify-items: center;
+}
+
+.footerColumn {
+    text-align: center;
+}
+
+.footerColumn ul{
+    padding: 0;
+    list-style: none;
+}
+
+.footerColumn lh h3{
+    color: #fbc849;
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+}
+
+.footerColumn ul li {
+    margin: 5px 0 5px 0;
+}
+
+.footerColumn ul li a {
+    color: #fff;
+    text-decoration: none;
+    
+}
+
+.footerColumn ul li > a:hover {
+    color: #fbc849;
+}
+
+@media only screen and (min-width: 768px) {
+
+    header {
+        grid-template-columns: 50% 50%;
+        align-content: center;
+        min-height: ;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .about h2 {
+        font-size: 2rem;
+    }
+
+    .about {
+        width: 58%;
+        margin-bottom: 50px;
+    }
+
+    
+    .content {
+        position: relative;
+        margin-top: 100px;
+    }
+
+    .teamMembers {
+        max-width: 70%;
+        position: absolute;
+        top: -210px;
+    }
+
+    .teamMembers .photo {
+        max-width: 180px;
+    }
+
+
+    .teamMembersBottom {
+        width: 50%;
+        min-width: 477px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: left;
+        margin-bottom: 50px;
+    }
+
+    .teamMembersBottom .layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-content: center;
+        margin: 20px 0 20px 0;
+    }
+    
+    .teamMembersBottom .photo {
+        max-width: 120px;
+        margin: 0;
+    }
+
+    .memberContact {
+        text-align: center;
+        margin: 25px 5px 0px 5px;
+    }
+
+    .footerInner {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
