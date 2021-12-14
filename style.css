@@ -3,6 +3,10 @@
     font-size: 1rem;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 p {
     margin: 0;
     letter-spacing: 1.2px;
@@ -10,24 +14,44 @@ p {
 
 header {
     width: 100%;
-    height: 10vh;
-    min-height: 79px;
+    height: 102px;
     background-color: rgb(71, 71, 71);
     display: grid;
     grid-template-columns: 100%;
-    justify-items: center;   
+    justify-items: center;
+    transition: all 0.5s ease; 
 }
 
 .logo p {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;    
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.logo {
-    margin-bottom: 5px;
+.logoInner {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    line-height: 40px;
+    cursor: pointer;
+    color: #fbc849;
 }
+
+.logoInner:before {
+    transition: height 0.3s ease;
+    content: attr(data-text);
+    position: absolute;
+    overflow: hidden;
+    height: 40px;
+    color: #fff;
+    left: 0;
+    top: 0;
+}
+
+.logoInner:hover:before {
+    height: 0;
+}
+
 
 .searchBar {
     max-width: 300px;
@@ -45,20 +69,51 @@ header {
 
 .hero {
     width: 100%;
-    height: 110vh;    
+    height: 90vh;    
     background-image: url("src/img/bg.jpeg");
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    justify-items: center;
+
 }
+
+.hero h1 {
+    transition: ease all .5s;
+}
+
+.heroSlogan {  
+    position: relative;
+    cursor: pointer;  
+    color: #fff;
+    grid-row: 4 / 5;
+    text-align: center;
+}
+
+.hero h1 {
+    height: calc(100% + 3px);
+    background: linear-gradient(to right, #fff, #fff 50%, #000000 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 0.3s ease;
+}
+
+.hero h1:hover {
+    background-position: 0 100%;
+}
+
 
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: ease all .5s;
 }
+
 
 .teamMembers {
     width: 96%;
@@ -75,6 +130,7 @@ header {
     margin: 15px 2px 15px 2px;
     padding: -5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: all 0.5s ease;
 }
 
 img {
@@ -95,9 +151,10 @@ img {
     font-size: 1.5rem;
     color: #fbc849;
     text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    transition: ease all .5s;
 }
 
-.about p{
+.about p {
     line-height: 25px;
 }
 
@@ -123,10 +180,10 @@ img {
 }
 
 .name {
-    color: rgba(255,214,4,1);
+    color: #fbc849;
     font-size: 1.2rem;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin: 5px 0 10px 0;
     text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
@@ -184,16 +241,25 @@ footer::before {
     color: #fbc849;
 }
 
+
+
 @media only screen and (min-width: 768px) {
 
     header {
+        height: 10vh;
+        min-height: 49px;
+        max-height: 66px;
         grid-template-columns: 50% 50%;
         align-content: center;
-        min-height: ;
+        transition: all 0.5s ease;
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: 4rem;
+    }
+
+    .hero {
+        height: 110vh;
     }
 
     .about h2 {
@@ -221,10 +287,17 @@ footer::before {
         max-width: 180px;
     }
 
+     .photo:hover {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        transform: scale(1.2);
+        transition: all 0.3s ease;
+        outline: 1px solid rgba(255,213,0,0.3);
+    }
+
 
     .teamMembersBottom {
         width: 50%;
-        min-width: 477px;
+        min-width: 528px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-items: left;
@@ -248,7 +321,30 @@ footer::before {
         margin: 25px 5px 0px 5px;
     }
 
+
     .footerInner {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
     }
+
+    .f1{
+        grid-column: 2 / 3 ;
+    }
+
+     .f2{
+        grid-column: 3 / 4 ;
+    }
+
+     .f3{
+        grid-column: 4 / 5 ;
+    }
+
+     .f4{
+        grid-column: 5 / 6 ;
+    }
+
+    
+
+  
+   
 }
